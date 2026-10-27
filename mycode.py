@@ -1,5 +1,5 @@
 
-import pandas as pd
+import pandasgit status as pd
 import os
 
 # Create data folder
@@ -16,3 +16,19 @@ df = pd.DataFrame({
 df.to_csv("data/products.csv", index=False)
 
 print("Data saved successfully to data/products.csv")
+
+# Version 2: Append a new product
+new_row = pd.DataFrame({
+    "product": ["Mouse"],
+    "price": [800],
+    "category": ["Accessories"]
+})
+
+new_row.to_csv(
+    "data/products.csv",
+    mode="a",
+    header=False,
+    index=False
+)
+
+print("Version 2: Mouse added successfully!")
